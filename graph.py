@@ -4,7 +4,6 @@ from scipy.optimize import root_scalar
 import math
 from itertools import combinations
 import json
-import matplotlib.pyplot as plt
 
 print("start")
 round = 10  # index for different rounds
@@ -46,7 +45,7 @@ def f_even(x, g):
 
 p_sets_SSW = []  # store the visibility thresholds for SSWs
 p_sets_fidelity = []  # store the visibility thresholds for fidelity-based witnesses
-densities = [i for i in np.arange(0.2, 1.1, 0.2)]  # graph densities
+densities = [0.2, 0.4, 0.6, 0.8]  # graph densities
 for density in densities:
     p_set_SSW = []
     p_set_fidelity = []
@@ -104,7 +103,7 @@ for n in range(n_min, n_max+1):
         gamma_prime = root_scalar(f_complete_odd, args=n//2, bracket=[0, 1]).root
     v = d**2/(d-1)/(d+1+(d**2-1)*gamma_prime) - 1/(d**2-1)
     p_set_SSW.append(v)
-    p_set_fidelity.append((d**2*np.power(1/d, 2/n)-1)/(d**2-1))
+    p_set_fidelity.append((d**2*np.power(1/d, 2/n)-1)/(d**2-1))  # m = n(n-1)/2
 
 p_sets_SSW.append(p_set_SSW)
 p_sets_fidelity.append(p_set_fidelity)
