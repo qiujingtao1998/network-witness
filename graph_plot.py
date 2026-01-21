@@ -66,16 +66,16 @@ for i in range(len(densities)):
     density = densities[i]
     if i == 0:
         ax.plot(n_set, p_set_SSW, marker='o', markersize=4, color=colors[i], label=f'{density:.1f}')  # , label=f'{density:.1f}')
-        ax.plot(n_set, p_set_fidelity, marker='x', linestyle='--', color=colors[i]) 
+        ax.plot(n_set, p_set_fidelity, marker='^', markersize=4, linestyle='--', color=colors[i]) 
     else:
         ax.plot(n_set, p_set_SSW, marker='o', markersize=4, color=colors[i], label=f'{density:.1f}')
-        ax.plot(n_set, p_set_fidelity, marker='x', linestyle='--', color=colors[i]) 
+        ax.plot(n_set, p_set_fidelity, marker='^', markersize=4, linestyle='--', color=colors[i]) 
 
-ax.tick_params(axis='both', which='major', direction='in')
-ax.tick_params(axis='both', which='minor', direction='in')
+ax.tick_params(axis='both', which='major', direction='in', labelsize=13)
+ax.tick_params(axis='both', which='minor', direction='in', labelsize=13)
 ax.set_ylim([0.33, 1])
-ax.set_xlabel(r"$|V|$")
-ax.set_ylabel(r"$p$")
+ax.set_xlabel(r"$|V|$", fontsize=13)
+ax.set_ylabel(r"$p$", fontsize=13)
 
 
 handles = [
@@ -90,7 +90,9 @@ leg1 = ax.legend(
     title = r'Density $D$',
     handles=handles,
     loc='center left',
-    bbox_to_anchor=(1, 0.5)
+    bbox_to_anchor=(1, 0.5),
+    fontsize=13,
+    title_fontsize=13,
 )
 
 
