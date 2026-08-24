@@ -101,8 +101,8 @@ for n in range(n_min, n_max+1):
         gamma_prime = root_scalar(f_complete_even, args=n//2, bracket=[0, 1]).root
     else:
         gamma_prime = root_scalar(f_complete_odd, args=n//2, bracket=[0, 1]).root
-    v = d**2/(d-1)/(d+1+(d**2-1)*gamma_prime) - 1/(d**2-1)
-    p_set_SSW.append(v)
+    p = d**2/(d-1)/(d+1+(d**2-1)*gamma_prime) - 1/(d**2-1)
+    p_set_SSW.append(p)
     p_set_fidelity.append((d**2*np.power(1/d, 2/n)-1)/(d**2-1))  # m = n(n-1)/2
 
 p_sets_SSW.append(p_set_SSW)
