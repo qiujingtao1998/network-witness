@@ -33,7 +33,7 @@ for V in range(3, 11):
 
 
 ax1.plot(V_set, SSW_bound_white, label='SSWs', marker='o')
-ax1.plot(V_set, GEN_bound_white, label='Ref. [9]', marker='^')
+ax1.plot(V_set, GEN_bound_white, label='Ref. [6]', marker='^')
 
 ax1.legend()
 ax1.tick_params(axis='both', which='major', direction='in', labelsize=10)
@@ -43,7 +43,7 @@ ax1.set_xlabel(r"$|V|$", fontsize=10)
 ax1.set_ylabel(r"$\lambda$", fontsize=10)
 
 ax2.plot(V_set, SSW_bound_dephasing, label='SSWs', marker='o')
-ax2.plot(V_set, GEN_bound_dephasing, label='Ref. [9]', marker='^')
+ax2.plot(V_set, GEN_bound_dephasing, label='Ref. [6]', marker='^')
 
 ax2.legend()
 ax2.tick_params(axis='both', which='major', direction='in', labelsize=10)
